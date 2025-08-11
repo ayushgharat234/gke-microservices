@@ -1,0 +1,19 @@
+replicaCount: 1
+
+image:
+  repository: ayushgharat234/api-gateway
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: LoadBalancer
+  port: 9090
+  targetPort: 9090
+
+env:
+  TASK_SERVICE_URL: "http://task-service:8080"
+
+imagePullSecrets:
+  - name: regcred
+
+resources: {}

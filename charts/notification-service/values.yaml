@@ -1,0 +1,18 @@
+replicaCount: 1
+
+image:
+  repository: ayushgharat234/notification-service
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 8083
+  targetPort: 8083
+
+env: {}
+
+imagePullSecrets:
+  - name: regcred
+
+resources: {}
